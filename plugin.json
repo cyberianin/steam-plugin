@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "steam-companion",
+  "version": "0.1.0",
+  "description": "Read-only personal Steam library, activity, offer, and wallet context.",
+  "skills": "./skills/",
+  "keywords": ["steam", "gaming", "library"]
+}

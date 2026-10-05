@@ -1,0 +1,48 @@
+# Local configuration and credentials. Keep the checked-in template.
+.env
+.env.*
+!.env.example
+
+# Python environments and bytecode
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local databases and logs
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Test, type-checker, formatter and build output
+.pytest_cache/
+pytest-cache-files-*/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+*.egg-info/
+.uv-cache/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Private key or certificate bundles
+*.pem
+*.key
+*.p12
+*.pfx
