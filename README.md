@@ -45,7 +45,7 @@ The MCP interface does not expose tools for changing your Steam account or purch
 cp .env.example .env
 ```
 
-Edit `.env` and set:
+Edit `.env` and replace the required placeholders. The sample already includes the application's optional defaults, so you can leave those settings as they are:
 
 | Variable | Purpose |
 | --- | --- |
@@ -65,9 +65,9 @@ openssl genpkey -algorithm Ed25519 -out oauth-ed25519.pem
 openssl rand -hex 32
 ```
 
-Put the private key contents in `OAUTH_SIGNING_KEY` and the random hex output in `SESSION_SECRET`. Keep `.env` and `oauth-ed25519.pem` private; both are excluded from Git.
+Replace the `OAUTH_SIGNING_KEY` placeholder with the complete private key, preserving its PEM lines and surrounding single quotes. Put the random hex output in `SESSION_SECRET`. Keep `.env` and `oauth-ed25519.pem` private; both are excluded from Git.
 
-The sample region in `.env.example` is only a starting value. Set the country and currency that match your account's store region.
+The sample region in `.env.example` is only a starting value. Set the country and currency that match your account's store region. Compose pins the container database to `/data/steam-companion.sqlite3` regardless of the `DATABASE_URL` value in `.env`.
 
 ### 2. Start the service
 

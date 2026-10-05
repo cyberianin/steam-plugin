@@ -18,7 +18,7 @@ EXPOSE 8000
 VOLUME ["/data"]
 HEALTHCHECK --interval=30s --timeout=3s --start-period=15s --retries=3 \
   CMD python -c "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:'+os.getenv('APP_PORT','8000')+'/healthz',timeout=2)"
-CMD ["sh", "-c", "exec uvicorn steam_companion.app:app --app-dir /app/src --host ${APP_HOST:-0.0.0.0} --port ${APP_PORT:-8000} --proxy-headers --forwarded-allow-ips='*' --no-access-log"]
+CMD ["sh", "-c", "exec uvicorn steam_companion.app:app --host ${APP_HOST:-0.0.0.0} --port ${APP_PORT:-8000} --proxy-headers --forwarded-allow-ips='*' --no-access-log"]
 
 FROM python:3.13-slim AS test
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
